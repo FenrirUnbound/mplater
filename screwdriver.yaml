@@ -25,6 +25,7 @@ jobs:
     - tag: ./ci/git-tag.sh
     - release: ./ci/git-release.sh
     secrets:
+    - GIT_KEY
     # Pushing releases to GitHub
     - GITHUB_TOKEN
     environment:
