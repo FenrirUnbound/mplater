@@ -1,0 +1,8 @@
+hash: c6df5e3e16ef31c3bd42e9eb89e00bae3ca7e0094ce02f23db4c4d9ca7586a31
+updated: 2017-07-18T21:50:59.628319266-07:00
+imports:
+- name: github.com/urfave/cli
+  version: 0bdeddeeb0f650497d603c4ad7b20cfe685682f6
+testImports:
+- name: github.com/stretchr/testify
+  version: 69483b4bd14f5845b5a1e55bca19e954e827f1d0
