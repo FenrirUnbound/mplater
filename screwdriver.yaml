@@ -17,11 +17,8 @@ jobs:
 
   deploy:
     steps:
-    - setup-ci: git clone https://gist.github.com/3d2388b2a7ba658cdcdaffa8cd874e50.git ci
-    - get: go get -t ./...
-    - gofmt: "find . -name '*.go' | xargs gofmt -s -w"
-    - build: go build -a -o mplater
-    - tag: ./ci/git-tag.sh
+    - setup-ci: git clone https://gist.github.com/3d2388b2a7ba658cdcdaffa8cd874e50.git /tmp/ci
+    - tag: /tmp/ci/git-tag.sh
     - release: curl -sL https://git.io/goreleaser | bash
     secrets:
     - GIT_KEY
