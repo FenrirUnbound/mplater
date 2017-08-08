@@ -19,7 +19,9 @@ jobs:
     steps:
     - setup-ci: git clone https://gist.github.com/3d2388b2a7ba658cdcdaffa8cd874e50.git /tmp/ci
     - tag: /tmp/ci/git-tag.sh
-    - release: curl -sL https://git.io/goreleaser | bash
+    - release: |
+        rm ./VERSION
+        curl -sL https://git.io/goreleaser | bash
     secrets:
     - GIT_KEY
     # Pushing releases to GitHub
