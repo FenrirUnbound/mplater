@@ -1,0 +1,13 @@
+builds:
+- main: ./mplater.go
+  binary: mplater
+  goos:
+  - windows
+  - darwin
+  - linux
+archive:
+  format: tar.gz
+  replacements:
+    amd64: 64-bit
+    darwin: macOS
+    linux: Tux

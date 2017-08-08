@@ -21,9 +21,8 @@ jobs:
     - get: go get -t ./...
     - gofmt: "find . -name '*.go' | xargs gofmt -s -w"
     - build: go build -a -o mplater
-    - get-bzip2: apt-get update && apt-get install -y --no-install-recommends bzip2
     - tag: ./ci/git-tag.sh
-    - release: ./ci/git-release.sh
+    - release: curl -sL https://git.io/goreleaser | bash
     secrets:
     - GIT_KEY
     # Pushing releases to GitHub
