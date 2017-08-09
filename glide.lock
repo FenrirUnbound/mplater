@@ -1,8 +1,49 @@
 hash: c6df5e3e16ef31c3bd42e9eb89e00bae3ca7e0094ce02f23db4c4d9ca7586a31
-updated: 2017-07-18T21:50:59.628319266-07:00
+updated: 2017-08-09T15:30:16.361948566-07:00
 imports:
+- name: github.com/codegangsta/cli
+  version: b99aa811b4c1dd84cc6bccb8499c82c72098085a
+- name: github.com/Masterminds/glide
+  version: 245caced2b16358b1c5e267691b17e9ee9952127
+  subpackages:
+  - action
+  - cache
+  - cfg
+  - dependency
+  - gb
+  - godep
+  - godep/strip
+  - gom
+  - gpm
+  - importer
+  - mirrors
+  - msg
+  - path
+  - repo
+  - tree
+  - util
+- name: github.com/Masterminds/semver
+  version: 517734cc7d6470c0d07130e40fd40bdeb9bcd3fd
+- name: github.com/Masterminds/vcs
+  version: 3084677c2c188840777bff30054f2b553729d329
+- name: github.com/mitchellh/go-homedir
+  version: b8bc1bf767474819792c23f32d8286a45736f1c6
 - name: github.com/urfave/cli
   version: 0bdeddeeb0f650497d603c4ad7b20cfe685682f6
+- name: gopkg.in/yaml.v2
+  version: 25c4ec802a7d637f88d584ab26798e94ad14c13b
 testImports:
+- name: github.com/davecgh/go-spew
+  version: 6d212800a42e8ab5c146b8ace3490ee17e5225f9
+  subpackages:
+  - spew
+- name: github.com/pmezard/go-difflib
+  version: d8ed2627bdf02c080bf22230dbb337003b7aba2d
+  subpackages:
+  - difflib
 - name: github.com/stretchr/testify
   version: 69483b4bd14f5845b5a1e55bca19e954e827f1d0
+  subpackages:
+  - assert
+  - require
+  - suite

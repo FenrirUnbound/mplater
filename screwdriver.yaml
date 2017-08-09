@@ -5,14 +5,15 @@ shared:
   image: golang
   environment:
     GOPATH: /sd/workspace
+    GO15VENDOREXPERIMENT: 1
 
 jobs:
   main:
     steps:
     - get: go get -t ./...
-    - vet: go vet ./...
-    - gofmt: "find . -name '*.go' | xargs gofmt -s -w"
-    - test: go test ./...
+    - vet: go vet $(go list ./... | grep -v /vendor/)
+    - gofmt: go fmt $(go list ./... | grep -v /vendor/)
+    - test: go test $(go list ./... | grep -v /vendor/)
     - build: go build -a -o mplater
 
   deploy:
