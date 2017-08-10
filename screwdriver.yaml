@@ -12,7 +12,9 @@ jobs:
     - dude: sd-step exec fenrirunbound/mplater
     - maybe: ls /bin
     - huh: sd-step exec fenrirunbound/mplater "-h"
-    - whatever:  sd-step exec fenrirunbound/mplater "mplater -h"
+    - whatever:  sd-step exec fenrirunbound/mplater "mplater" "-h"
+    - ending:  sd-step exec fenrirunbound/mplater "mplater -h"
+    - finale:  sd-step exec fenrirunbound/mplater "mplater"
 
   deploy:
     steps:
