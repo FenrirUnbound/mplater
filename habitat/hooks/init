@@ -1,4 +1,0 @@
-#!/bin/sh
-
-ls {{pkg.path}}
-ln -sf {{pkg.path}}/bin/mplater {{pkg.svc_var_path}}

@@ -5,19 +5,25 @@ pkg_maintainer="Darren Matsumoto <aeneascorrupt@gmail.com>"
 #pkg_source="https://github.com/FenrirUnbound/mplater"
 pkg_upstream_url=https://github.com/FenrirUnbound/mplater
 pkg_deps=()
-pkg_build_deps=(core/git core/go17 core/which)
+pkg_build_deps=()
 pkg_exports=()
 pkg_bin_dirs=()
 pkg_exposes=()
 
-do_prepare() {
-  export GOROOT="/hab/pkgs/core/go17/1.7.5/20170514000935"
-  export GOPATH="$HOME/go"
-  export PATH="$PATH:$GOROOT/bin"
+do_download() {
+  wget -O $HAB_CACHE_SRC_PATH/mplater.tar.gz https://github.com/FenrirUnbound/mplater/releases/download/v0.0.7/mplater_0.0.7_Tux_64-bit.tar.gz
+}
+
+do_unpack() {
+  tar -zxvf $HAB_CACHE_SRC_PATH/mplater.tar.gz -C $HAB_CACHE_SRC_PATH
 }
 
 do_build() {
-  go install github.com/Masterminds/glide/...
-  build_line "Here"
-  ls /hab/pkgs/core/go17/1.7.5/20170514000935
+  return 0
+}
+
+do_install() {
+  mkdir -p $pkg_prefix/bin
+  mv $HAB_CACHE_SRC_PATH/mplater $pkg_prefix/bin/mplater
+  chmod +x $pkg_prefix/bin/mplater
 }
