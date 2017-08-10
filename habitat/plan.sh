@@ -7,7 +7,9 @@ pkg_upstream_url=https://github.com/FenrirUnbound/mplater
 pkg_deps=()
 pkg_build_deps=()
 pkg_exports=()
-pkg_bin_dirs=()
+pkg_include_dirs=(include)
+pkg_lib_dirs=(lib)
+pkg_bin_dirs=(bin)
 pkg_exposes=()
 
 do_download() {
@@ -26,4 +28,7 @@ do_install() {
   mkdir -p $pkg_prefix/bin
   mv $HAB_CACHE_SRC_PATH/mplater $pkg_prefix/bin/mplater
   chmod +x $pkg_prefix/bin/mplater
+
+  PATH="$PATH:$pkg_prefix/bin"
+  build_line "Updating PATH=$PATH"
 }
