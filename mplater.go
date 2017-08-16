@@ -46,16 +46,19 @@ func process(c *cli.Context) error {
 	outputFile, _ := filepath.Abs(c.String("o"))
 	fileWriter, err := os.Create(outputFile)
 	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error encountered while creating the output file: %v", err)
 		return err
 	}
 
 	tmpl, err := primeTemplateEngine(c.String("i"))
 	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error encountered while priming the template engine: %v", err)
 		return err
 	}
 
 	err = tmpl.Execute(fileWriter, templateValues)
 	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error encountered while completing the template: %v", err)
 		return err
 	}
 
