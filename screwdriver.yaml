@@ -1,6 +1,3 @@
-workflow:
-- deploy
-
 shared:
   image: golang
   environment:
